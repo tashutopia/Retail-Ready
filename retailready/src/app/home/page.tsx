@@ -5,7 +5,7 @@ export default async function Page() {
   return (
     <main>
       <h1 className="text-2xl font-bold text-center">Welcome, Tashu!</h1>
-      <p className="text-center">Let's get retail-ready.</p>
+      <p className="text-center">Lets get retail-ready.</p>
       <div className="flex flex-col items-center justify-center">
         {links.map((link) => {
           const LinkIcon = link.icon;

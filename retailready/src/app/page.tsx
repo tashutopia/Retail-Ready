@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div style={{ backgroundColor: "#000" }}>
       <h1 className="text-center text-white text-3xl font-semibold font-raleway">
-        Let's Get RetailReady
+        Lets Get RetailReady
       </h1>
       <Link
         href="/login"
