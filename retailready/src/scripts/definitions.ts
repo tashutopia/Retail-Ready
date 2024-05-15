@@ -13,3 +13,11 @@ export type Order = {
     user: string;
     time_elapsed: number;
 }
+
+export type User = {
+    name: string;
+    email: string;
+    password: string;
+    type: string;
+    wholesaler: string;
+};
