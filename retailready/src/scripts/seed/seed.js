@@ -10,7 +10,10 @@ async function main() {
     const client = await db.connect();
 
     try {
-        await seedSequences(client);
+      await seedOrders(client);
+      await seedScreens(client);
+      await seedSequences(client);
+      await seedUsers(client);
     } catch (err) {
         console.error('An error occurred while attempting to seed the database:', err);
     } finally {

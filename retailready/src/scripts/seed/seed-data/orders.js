@@ -5,7 +5,7 @@ const orders = [
         order_number: "dicks-sporting-goods-001",
         shipper: "Shipper",
         retailer: "Dick’s Sporting Goods",
-        wholeseller: "Wholeseller 1",
+        wholesaler: "Wholesaler 1",
         status: 0,
         pallets: [
             {
@@ -21,7 +21,6 @@ const orders = [
                 errors: []
             }
         ],
-        errors: [],
         user: "",
         time_elapsed: 0
     },
@@ -29,7 +28,7 @@ const orders = [
         order_number: "dicks-sporting-goods-002",
         shipper: "Shipper",
         retailer: "Dick’s Sporting Goods",
-        wholeseller: "Wholeseller 1",
+        wholesaler: "Wholesaler 1",
         status: 0,
         pallets: [
             {
@@ -51,7 +50,6 @@ const orders = [
                 errors: []
             }
         ],
-        errors: [],
         user: "",
         time_elapsed: 0
     },
@@ -59,7 +57,7 @@ const orders = [
         order_number: "dicks-sporting-goods-001",
         shipper: "Shipper",
         retailer: "Dick’s Sporting Goods",
-        wholeseller: "Wholeseller 2",
+        wholesaler: "Wholesaler 2",
         status: 0,
         pallets: [
             {
@@ -75,7 +73,6 @@ const orders = [
                 errors: []
             }
         ],
-        errors: [],
         user: "",
         time_elapsed: 0
     },
@@ -83,7 +80,7 @@ const orders = [
         order_number: "dicks-sporting-goods-002",
         shipper: "Shipper",
         retailer: "Dick’s Sporting Goods",
-        wholeseller: "Wholeseller 2",
+        wholesaler: "Wholesaler 2",
         status: 0,
         pallets: [
             {
@@ -105,7 +102,6 @@ const orders = [
                 errors: []
             }
         ],
-        errors: [],
         user: "",
         time_elapsed: 0
     }

@@ -11,7 +11,7 @@ async function seedUsers(client) {
           name VARCHAR(50) NOT NULL,
           password TEXT NOT NULL,
           type VARCHAR(50) NOT NULL,
-          wholeseller VARCHAR(50) NOT NULL
+          wholesaler VARCHAR(50) NOT NULL
         );
       `;
   
@@ -21,9 +21,9 @@ async function seedUsers(client) {
         users.map(async (user) => {
           const hashedPassword = await bcrypt.hash(user.password, 10);
           return client.sql`
-          INSERT INTO retailreadyusers (email, name, password, type, wholeseller)
-          VALUES (${user.email}, ${user.name}, ${hashedPassword}, ${user.type}, ${user.wholeseller})
-          ON CONFLICT (email) DO UPDATE SET name = EXCLUDED.name, password = EXCLUDED.password, type = EXCLUDED.type, wholeseller = EXCLUDED.wholeseller;
+          INSERT INTO retailreadyusers (email, name, password, type, wholesaler)
+          VALUES (${user.email}, ${user.name}, ${hashedPassword}, ${user.type}, ${user.wholesaler})
+          ON CONFLICT (email) DO UPDATE SET name = EXCLUDED.name, password = EXCLUDED.password, type = EXCLUDED.type, wholesaler = EXCLUDED.wholesaler;
         `;
         }),
       );

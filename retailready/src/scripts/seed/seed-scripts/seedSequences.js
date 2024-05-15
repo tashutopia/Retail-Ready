@@ -9,7 +9,7 @@ async function seedSequences(client) {
       CREATE TABLE IF NOT EXISTS retailreadysequences (
           unique_id uuid DEFAULT uuid_generate_v4 () PRIMARY KEY,
           retailer TEXT NOT NULL,
-          wholeseller VARCHAR(255) NOT NULL,
+          wholesaler VARCHAR(255) NOT NULL,
           category VARCHAR(255) NOT NULL,
           screens integer[] NOT NULL
         );
@@ -20,9 +20,9 @@ async function seedSequences(client) {
       const insertedSequences = await Promise.all(
         sequences.map(async (sequence) => {
             return client.sql`
-            INSERT INTO retailreadysequences (retailer, wholeseller, category, screens)
-            VALUES (${sequence.retailer}, ${sequence.wholeseller}, ${sequence.category}, ${sequence.screens})
-            ON CONFLICT (unique_id) DO UPDATE SET retailer = EXCLUDED.retailer, wholeseller = EXCLUDED.wholeseller, category = EXCLUDED.category, screens = EXCLUDED.screens;
+            INSERT INTO retailreadysequences (retailer, wholesaler, category, screens)
+            VALUES (${sequence.retailer}, ${sequence.wholesaler}, ${sequence.category}, ${sequence.screens})
+            ON CONFLICT (unique_id) DO UPDATE SET retailer = EXCLUDED.retailer, wholesaler = EXCLUDED.wholesaler, category = EXCLUDED.category, screens = EXCLUDED.screens;
         `;
         }),
       );

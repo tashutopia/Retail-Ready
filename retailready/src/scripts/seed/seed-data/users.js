@@ -2,32 +2,32 @@
 
 const users = [
     {
-        name: 'Wholeseller 1 Worker',
-        email: 'worker@wholeseller1.com',
+        name: 'Wholesaler 1 Worker',
+        email: 'worker@wholesaler1.com',
         password: 'password',
         type: 'worker',
-        wholeseller: 'Wholeseller 1',
+        wholesaler: 'Wholesaler 1',
     },
     {
-        name: 'Wholeseller 1 Admin',
-        email: 'admin@wholeseller1.com',
+        name: 'Wholesaler 1 Admin',
+        email: 'admin@wholesaler1.com',
         password: 'password',
         type: 'admin',
-        wholeseller: 'Wholeseller 1',
+        wholesaler: 'Wholesaler 1',
     },
     {
-        name: 'Wholeseller 2 Worker',
-        email: 'worker@wholeseller2.com',
+        name: 'Wholesaler 2 Worker',
+        email: 'worker@wholesaler2.com',
         password: 'password',
         type: 'worker',
-        wholeseller: 'Wholeseller 2',
+        wholesaler: 'Wholesaler 2',
     },
     {
-        name: 'Wholeseller 2 Admin',
-        email: 'admin@wholeseller2.com',
+        name: 'Wholesaler 2 Admin',
+        email: 'admin@wholesaler2.com',
         password: 'password',
         type: 'admin',
-        wholeseller: 'Wholeseller 2',
+        wholesaler: 'Wholesaler 2',
     },
 ];
 
