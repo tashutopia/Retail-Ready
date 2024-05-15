@@ -1,3 +1,5 @@
+// unique id is the retailer name + category
+
 const screens = [
     {
         retailer: "Dick’s Sporting Goods",
@@ -57,4 +59,5 @@ const screens = [
 ]
 
 module.exports = { screens };
+
 
