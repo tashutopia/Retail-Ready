@@ -4,12 +4,8 @@ export type Order = {
     retailer: string;
     wholesaler: string;
     status: number;
-    pallets: Array<{
-        sku: string;
-        quantity: number;
-        status: number;
-        errors: Array<String>;
-    }>;
+    skus_left: Array<string>;
+    pallets: Array<any>;
     user: string;
     time_elapsed: number;
 }

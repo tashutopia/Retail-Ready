@@ -7,20 +7,8 @@ const orders = [
         retailer: "Dick’s Sporting Goods",
         wholesaler: "Wholesaler 1",
         status: 0,
-        pallets: [
-            {
-                sku: "shoes",
-                quantity: 10,
-                status: 0,
-                errors: []
-            },
-            {
-                sku: "pants",
-                quantity: 20,
-                status: 0,
-                errors: []
-            }
-        ],
+        skus_left: ["shoes", "pants"],
+        pallets: [],
         user: "",
         time_elapsed: 0
     },
@@ -30,78 +18,30 @@ const orders = [
         retailer: "Dick’s Sporting Goods",
         wholesaler: "Wholesaler 1",
         status: 0,
-        pallets: [
-            {
-                sku: "pants",
-                quantity: 10,
-                status: 0,
-                errors: []
-            },
-            {
-                sku: "shorts",
-                quantity: 20,
-                status: 0,
-                errors: []
-            },
-            {
-                sku: "trousers",
-                quantity: 20,
-                status: 0,
-                errors: []
-            }
-        ],
+        skus_left: ["pants", "shorts", "trousers"],
+        pallets: [],
         user: "",
         time_elapsed: 0
     },
     {
-        order_number: "dicks-sporting-goods-001",
+        order_number: "dicks-sporting-goods-003",
         shipper: "Shipper",
         retailer: "Dick’s Sporting Goods",
         wholesaler: "Wholesaler 2",
         status: 0,
-        pallets: [
-            {
-                sku: "shoes",
-                quantity: 10,
-                status: 0,
-                errors: []
-            },
-            {
-                sku: "pants",
-                quantity: 20,
-                status: 0,
-                errors: []
-            }
-        ],
+        skus_left: ["shoes", "pants"],
+        pallets: [],
         user: "",
         time_elapsed: 0
     },
     {
-        order_number: "dicks-sporting-goods-002",
+        order_number: "dicks-sporting-goods-004",
         shipper: "Shipper",
         retailer: "Dick’s Sporting Goods",
         wholesaler: "Wholesaler 2",
         status: 0,
-        pallets: [
-            {
-                sku: "pants",
-                quantity: 10,
-                status: 0,
-                errors: []
-            },
-            {
-                sku: "shorts",
-                quantity: 20,
-                status: 0,
-                errors: []
-            },
-            {
-                sku: "trousers",
-                quantity: 20,
-                status: 0,
-                errors: []
-            }
-        ],
+        skus_left: ["pants", "shorts", "trousers"],
+        pallets: [],
         user: "",
         time_elapsed: 0
     }

@@ -14,6 +14,7 @@ async function seedOrders(client) {
           wholesaler VARCHAR(255) NOT NULL,
           status INTEGER NOT NULL,
           pallets JSON NOT NULL,
+          skus_left JSON NOT NULL,
           "user" TEXT NOT NULL,
           time_elapsed INTEGER NOT NULL
         );
@@ -24,9 +25,9 @@ async function seedOrders(client) {
       const insertedOrders = await Promise.all(
         orders.map(async (order) => {
             return client.sql`
-            INSERT INTO retailreadyorders (order_number, retailer, shipper, wholesaler, status, pallets, "user", time_elapsed)
-            VALUES (${order.order_number}, ${order.retailer}, ${order.shipper}, ${order.wholesaler}, ${order.status}, ${JSON.stringify(order.pallets)}, ${order.user}, ${order.time_elapsed})
-            ON CONFLICT (unique_id) DO UPDATE SET order_number = EXCLUDED.order_number, retailer = EXCLUDED.retailer, shipper = EXCLUDED.shipper, wholesaler = EXCLUDED.wholesaler, status = EXCLUDED.status, pallets = EXCLUDED.pallets, "user" = EXCLUDED."user", time_elapsed = EXCLUDED.time_elapsed;
+            INSERT INTO retailreadyorders (order_number, retailer, shipper, wholesaler, status, pallets, skus_left, "user", time_elapsed) 
+            VALUES (${order.order_number}, ${order.retailer}, ${order.shipper}, ${order.wholesaler}, ${order.status}, ${JSON.stringify(order.pallets)}, ${JSON.stringify(order.skus_left)}, ${order.user}, ${order.time_elapsed}) 
+            ON CONFLICT (unique_id) DO UPDATE SET order_number = EXCLUDED.order_number, retailer = EXCLUDED.retailer, shipper = EXCLUDED.shipper, wholesaler = EXCLUDED.wholesaler, status = EXCLUDED.status, pallets = EXCLUDED.pallets, skus_left = EXCLUDED.skus_left, "user" = EXCLUDED."user", time_elapsed = EXCLUDED.time_elapsed; 
         `;
         }),
       );
@@ -44,5 +45,3 @@ async function seedOrders(client) {
 }
 
 module.exports = seedOrders;
-
-
