@@ -12,7 +12,7 @@ export default function Home() {
         href="/login"
         className="flex items-center justify-center gap-5 rounded-lg bg-retailready-blue px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
       >
-        <span>I'm In</span>
+        <span>I’m In</span>
       </Link>
     </div>
   );
