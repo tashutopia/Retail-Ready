@@ -1,11 +1,14 @@
 import Link from "next/link";
 import links from "./links";
+import { auth } from "@/app/login/auth";
 
 export default async function Page() {
+  const user = await auth();
+
   return (
     <main className="flex flex-col items-center justify-center h-screen space-y-4">
       <h1 className="text-2xl font-bold text-center text-retailready-blue">
-        Welcome, Tashu!
+        Welcome, {user?.user?.name}!
       </h1>
       <p className="text-center text-retailready-blue">Lets get RetailReady.</p>
       <div className="h-6"></div>

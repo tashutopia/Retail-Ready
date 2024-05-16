@@ -22,8 +22,8 @@ const links = [
     icon: ArrowDownOnSquareStackIcon,
   },
   {
-    name: "Edit Guidelines",
-    href: "/guidelines",
+    name: "Manage Steps",
+    href: "/steps",
     icon: ClipboardDocumentListIcon,
   },
 ];
