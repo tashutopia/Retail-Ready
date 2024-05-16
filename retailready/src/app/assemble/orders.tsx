@@ -5,6 +5,7 @@ import Link from "next/link";
 export async function Orders() {
   const user = await auth();
   const orders = await fetchOrders(user?.user?.email || "");
+
   return (
     <div className="p-4">
       <input

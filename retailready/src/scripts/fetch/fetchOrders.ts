@@ -1,12 +1,12 @@
 import { sql } from '@vercel/postgres';
-import { Order } from '@/scripts/definitions';
+import { Order, User } from '@/scripts/definitions';
 import { unstable_noStore as noStore } from 'next/cache';
 
 export async function fetchOrders(email: string) {
     noStore();
     
     try {
-        const user = await sql<Order>`SELECT * FROM retailreadyusers WHERE email = ${email}`;
+        const user = await sql<User>`SELECT * FROM retailreadyusers WHERE email = ${email}`;
         const wholesaler = user.rows[0].wholesaler;
 
         try {

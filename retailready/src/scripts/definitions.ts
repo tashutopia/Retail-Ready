@@ -17,3 +17,18 @@ export type User = {
     type: string;
     wholesaler: string;
 };
+
+export type Screen = {
+    retailer: string;
+    category: string;
+    unique_id: string;
+    skus: Array<string>;
+    screens: Array<{ [key: number]: Array<string> }>;
+}
+
+export type Sequence = {
+    retailer: string;
+    wholesaler: string;
+    category: string;
+    screens: Array<number>;
+}
