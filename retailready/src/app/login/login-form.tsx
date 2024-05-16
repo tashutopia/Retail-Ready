@@ -9,13 +9,17 @@ export default function LoginForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
 
   return (
-    <form action={dispatch}>
+    <form
+      className="max-w-sm mx-auto mt-8 p-4 bg-white shadow-md rounded"
+      action={dispatch}
+    >
       <input
         id="email"
         type="email"
         name="email"
         placeholder="Enter your email address"
         required
+        className="w-full px-3 py-2 mt-2 border rounded-md"
       />
       <input
         id="password"
@@ -24,13 +28,14 @@ export default function LoginForm() {
         placeholder="Enter password"
         required
         minLength={6}
+        className="w-full px-3 py-2 mt-2 border rounded-md"
       />
       <LoginButton />
       {errorMessage && (
-        <>
-          <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
+        <div className="flex items-center mt-2">
+          <ExclamationCircleIcon className="h-5 w-5 text-red-500 mr-2" />
           <p className="text-sm text-red-500">{errorMessage}</p>
-        </>
+        </div>
       )}
     </form>
   );
@@ -39,5 +44,12 @@ export default function LoginForm() {
 function LoginButton() {
   const { pending } = useFormStatus();
 
-  return <Button aria-disabled={pending}>Log in</Button>;
+  return (
+    <Button
+      className="flex justify-center w-full mt-4 rounded h-8 bg-retailready-blue"
+      aria-disabled={pending}
+    >
+      Log in
+    </Button>
+  );
 }

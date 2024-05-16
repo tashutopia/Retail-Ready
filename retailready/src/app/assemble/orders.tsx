@@ -13,7 +13,7 @@ export async function Orders() {
         placeholder="Order Number"
         className="w-full p-2 mb-4 border border-gray-300 rounded"
       />
-      <div className="space-y-4">
+      <div className="flex flex-col space-y-3">
         {orders?.map((order) => (
           <Link
             href={`/assemble/select-sku?orderNumber=${order.order_number}`}

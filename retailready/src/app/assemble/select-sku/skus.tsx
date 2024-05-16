@@ -13,7 +13,7 @@ export async function SKUs({ orderNumber }: { orderNumber: string }) {
           href={`/assemble/steps?sku=${sku}&orderNumber=${orderNumber}`}
           key={sku}
         >
-          <div className="p-4 border border-gray-300 rounded shadow-sm bg-white">
+          <div className="p-2 border border-gray-300 rounded shadow-sm bg-white mb-2 w-1/2 h-12 flex items-center">
             <p className="font-bold">{sku}</p>
           </div>
         </Link>
