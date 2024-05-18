@@ -10,14 +10,12 @@ export const authConfig = {
   ],
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
-      console.log("AUTH.CONFIG.TS BAHHHHH")
       const isLoggedIn = !!auth?.user;
       const isOnHome = nextUrl.pathname.startsWith('/home');
       if (isOnHome) {
         if (isLoggedIn) return true;
         return false; // Redirect unauthenticated users to login page
       } else if (isLoggedIn) {
-        console.log("AUTH.CONFIG.TS AHHHHHH")
         return Response.redirect(new URL('/home', nextUrl));
       }
       return true;

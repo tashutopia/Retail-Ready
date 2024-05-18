@@ -30,12 +30,16 @@ export const { auth, signIn, signOut } = NextAuth({
             if (parsedCredentials.success) {
               const { email, password } = parsedCredentials.data;
 
-              const user = await getUser(email);
+              let user: User | undefined;
+              await getUser(email).then((response) => {
+                user = response;
+                // console.log(response);
+              });
               if (!user) return null;
 
               const passwordsMatch = await bcrypt.compare(password, user.password);
               if (passwordsMatch) {
-                console.log("PASSWORDS MATCH")
+                // console.log("PASSWORDS MATCH")
                 return user;
               }
             }
@@ -46,4 +50,5 @@ export const { auth, signIn, signOut } = NextAuth({
         }),
     ],
 });
+  
   

@@ -4,14 +4,34 @@ import { useFormState, useFormStatus } from "react-dom";
 import { authenticate } from "./authenticate";
 import { Button } from "@/ui/button";
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function LoginForm() {
-  const [errorMessage, dispatch] = useFormState(authenticate, undefined);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    // This ensures the router is only used in client-side code
+    setIsMounted(true);
+  }, []);
+  // const [errorMessage, dispatch] = useFormState(authenticate, undefined);
+  const router = useRouter();
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const response = await authenticate(undefined, formData);
+    if (response === "signed in") {
+      router.push("/home");
+    } else {
+      alert("Invalid credentials");
+    }
+    console.log(response);
+  };
 
   return (
     <form
       className="max-w-sm mx-auto mt-8 p-4 bg-white shadow-md rounded"
-      action={dispatch}
+      onSubmit={handleLogin}
     >
       <input
         id="email"
@@ -30,13 +50,19 @@ export default function LoginForm() {
         minLength={6}
         className="w-full px-3 py-2 mt-2 border rounded-md"
       />
-      <LoginButton />
-      {errorMessage && (
+      <button
+        type="submit"
+        className="w-full mt-4 rounded h-8 bg-retailready-blue"
+      >
+        Log in
+      </button>
+      {/* <LoginButton /> */}
+      {/* {errorMessage && (
         <div className="flex items-center mt-2">
           <ExclamationCircleIcon className="h-5 w-5 text-red-500 mr-2" />
           <p className="text-sm text-red-500">{errorMessage}</p>
         </div>
-      )}
+      )} */}
     </form>
   );
 }
