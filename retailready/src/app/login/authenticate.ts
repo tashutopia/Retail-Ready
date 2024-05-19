@@ -1,6 +1,6 @@
 'use client';
 
-import { signIn } from "./auth";
+import { auth, signIn } from "./auth";
 import { AuthError } from 'next-auth';
 // import { useRouter } from 'next/router';
 
@@ -17,7 +17,13 @@ export async function authenticate(
             // console.log(response);
             // router.push('/home'); // Redirect to the home page
         });
-        return 'signed in';
+        
+        const user = await auth();
+        if (user) {
+            console.log("USER", user);
+            return 'signed in';
+        }
+        return 'not signed in';
     } catch (error) {
         if (error instanceof AuthError) {
             switch (error.type) {
