@@ -1,10 +1,12 @@
 import { fetchSKU } from "@/scripts/fetch/fetchSKU";
 import Link from "next/link";
 import { auth } from "@/app/login/auth";
+import { fetchUserInfo } from "@/scripts/fetch/fetchUserInfo";
 
 export async function SKUs({ orderNumber }: { orderNumber: string }) {
   const user = await auth();
-  const skus = await fetchSKU(orderNumber, user?.user?.email || "");
+  const userinfo = await fetchUserInfo(user?.user?.email || "");
+  const skus = await fetchSKU(orderNumber, userinfo?.wholesaler || "");
 
   return (
     <main>

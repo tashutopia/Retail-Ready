@@ -1,12 +1,12 @@
 export type Order = {
+    unique_id: string;
     order_number: string;
     shipper: string;
     retailer: string;
     wholesaler: string;
-    status: number;
     skus_left: Array<string>;
     pallets: Array<any>;
-    user: string;
+    packager: string;
     time_elapsed: number;
 }
 

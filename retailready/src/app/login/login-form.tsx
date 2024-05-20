@@ -50,13 +50,13 @@ export default function LoginForm() {
         minLength={6}
         className="w-full px-3 py-2 mt-2 border rounded-md"
       />
-      <button
+      {/* <button
         type="submit"
         className="w-full mt-4 rounded h-8 bg-retailready-blue"
       >
         Log in
-      </button>
-      {/* <LoginButton /> */}
+      </button> */}
+      <LoginButton />
       {/* {errorMessage && (
         <div className="flex items-center mt-2">
           <ExclamationCircleIcon className="h-5 w-5 text-red-500 mr-2" />

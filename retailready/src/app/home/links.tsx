@@ -17,11 +17,6 @@ const links = [
     icon: CheckIcon,
   },
   {
-    name: "Manage Orders",
-    href: "/manage",
-    icon: ArrowDownOnSquareStackIcon,
-  },
-  {
     name: "Manage Steps",
     href: "/steps",
     icon: ClipboardDocumentListIcon,

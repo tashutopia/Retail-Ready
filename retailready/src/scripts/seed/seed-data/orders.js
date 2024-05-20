@@ -6,10 +6,9 @@ const orders = [
         shipper: "Shipper",
         retailer: "Dick’s Sporting Goods",
         wholesaler: "Wholesaler 1",
-        status: 0,
         skus_left: ["shoes", "pants"],
         pallets: [],
-        user: "",
+        packager: "",
         time_elapsed: 0
     },
     {
@@ -17,10 +16,9 @@ const orders = [
         shipper: "Shipper",
         retailer: "Dick’s Sporting Goods",
         wholesaler: "Wholesaler 1",
-        status: 0,
         skus_left: ["pants", "shorts", "trousers"],
         pallets: [],
-        user: "",
+        packager: "",
         time_elapsed: 0
     },
     {
@@ -28,10 +26,9 @@ const orders = [
         shipper: "Shipper",
         retailer: "Dick’s Sporting Goods",
         wholesaler: "Wholesaler 2",
-        status: 0,
         skus_left: ["shoes", "pants"],
         pallets: [],
-        user: "",
+        packager: "",
         time_elapsed: 0
     },
     {
@@ -39,10 +36,19 @@ const orders = [
         shipper: "Shipper",
         retailer: "Dick’s Sporting Goods",
         wholesaler: "Wholesaler 2",
-        status: 0,
         skus_left: ["pants", "shorts", "trousers"],
         pallets: [],
-        user: "",
+        packager: "",
+        time_elapsed: 0
+    },
+    {
+        order_number: "dicks-sporting-goods-005",
+        shipper: "Shipper",
+        retailer: "Dick’s Sporting Goods",
+        wholesaler: "Wholesaler 2",
+        skus_left: ["pants", "shorts", "trousers"],
+        pallets: [],
+        packager: "",
         time_elapsed: 0
     }
 ]
